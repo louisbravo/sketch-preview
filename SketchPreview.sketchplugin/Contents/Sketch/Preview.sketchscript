@@ -122,7 +122,8 @@ function openPreviewFile(previewFilePath, doc) {
 }
 
 function onRun(context) {
-  var doc = context.document
+  var doc = NSDocumentController.sharedDocumentController().currentDocument() || NSDocumentController.sharedDocumentController().documents().firstObject()
+  // var doc = context.document
   preview(doc)
 }
 
